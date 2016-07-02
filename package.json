@@ -1,0 +1,22 @@
+{
+  "name": "express-workshop",
+  "version": "1.0.0",
+  "description": "CDN for blogs",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katsuraku/express-workshop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/katsuraku/express-workshop/issues"
+  },
+  "homepage": "https://github.com/katsuraku/express-workshop#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
