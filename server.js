@@ -10,7 +10,7 @@ app.get("/", function (req, res) {
   res.send('Hello!');  
 });
 
-app.get("/posts", function (req, res) {
+app.get("/get-posts", function (req, res) {
   res.sendFile(__dirname + '/data/posts.json');
 });
 
