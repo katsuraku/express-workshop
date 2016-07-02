@@ -1,10 +1,14 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var app = express();
+var fs = require('fs');
 
-// To access the req body when data has been POSTed to the server, need middleware.
-// body-parser parses data in the request and makes it available in req.body
+var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
+
+// fs.readFile(__dirname + '/data/posts.json', function (error, file) {
+//  var parsedFile = JSON.parse(file);
+//  console.log(file.toString());
+//  });
 
 app.use(express.static("public"));
 
@@ -14,6 +18,14 @@ app.get("/", function (req, res) {
 });
 
 app.post("/create-post", function (req, res) {
+  console.log(req.body);
+  var newPost = JSON.stringify(req.body);
+  fs.writeFile(__dirname + '/data/posts.json', newPost, function (error) {
+    if (error) {
+      console.log('There was this error', error);
+    }
+    console.log('I wrote the new blogpost into the file');
+  });
   res.redirect('/');
 });
 
