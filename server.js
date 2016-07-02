@@ -1,12 +1,14 @@
 var express = require('express');
 var app = express();
 
-// Handler function to handle requests to the server. Always takes a request and a response object.
-// Request object has everything in it like headers, cookies etc. 
-
 app.get("/", function (req, res) {
   res.send("Hello World");
   console.log(req);
+});
+
+app.get("/:something", function (req, res) {
+  var something = req.params.something;
+  res.send(something);
 });
 
 app.listen(3000, function () {
